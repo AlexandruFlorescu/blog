@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'rest_framework',
     'blogApp.apps.BlogappConfig',
+    'corsheaders'
 )
 
 # REST_FRAMEWORK= {
@@ -55,6 +56,23 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+)
+CORS_ORIGIN_ALLOW_ALL= True
+CORS_ALLOW_CREDENTIALS = True
+# APPEND_SLASH = False
+CORS_ALLOW_METHODS = (
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+)
+
+CORS_ORIGIN_WHITELIST = (
+    'localhost:8000',
 )
 
 ROOT_URLCONF = 'blogAPI.urls'

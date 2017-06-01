@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
-from .models import Post, LANGUAGE_CHOICES, STYLE_CHOICES
+from .models import Post
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
